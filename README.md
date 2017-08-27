@@ -89,4 +89,12 @@ Introduction:
       - DNS -> Translate URL -> Route 53, configure our own domain we actually load from S3 buckets
       - Cache -> Improve Performance (e.g. caching) -> CloudFront, all over the world copied to have the quickest route possible
     - For backend (API, Logic, Data, Auth)
-    
+  - Project description
+    - Frontend app, use finished app to host and give it domain, to build an API + Authentication
+    - Compare Yourself app
+    - Host S3 Web App, enter data into form (Income, height, etc.)
+    - When data is submitted, use API Gateway (GET, POST, DELETE)
+    - Authentication to protect API endpoints
+    - Business Logic - Lambda functions runs whenever requests reach endpoints
+    - Store data - DynamoDB
+    - polish it with Route 53 and CloudFront for caching
