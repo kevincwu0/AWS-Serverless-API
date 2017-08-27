@@ -47,3 +47,18 @@ Introduction:
     - (Serverless) - Scales automatically - pay what you need
     - (Serverless) - runs in up-to-date and secure environment
     - (Serverless) - great for SPA + API apps, limited support for fullstack apps (node/express apps)
+ - API Gateway
+  - New API, first-api
+  - define all the resources API, HTTP methods in editor
+  - there are advanced ways of creating such an API (importing API definition files) 
+  - Resources -> Actions -> Create Resource
+    - define which HTTP request to react, actions -> create method (GET)
+      - Lambda Function, HTTP endpoint, Mock, AWS Service
+      - Mock (Dummy data)
+      - Integration response -> Body Mapping Templates
+  - Deploy API
+    - Actions -> Deploy API
+    - Stage different versions 
+    - Deploy with invoke URL
+    - Missing auth token because not handling root, change to api endpoint
+    - JSON object, API Gateway 
