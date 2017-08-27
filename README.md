@@ -98,3 +98,23 @@ Introduction:
     - Business Logic - Lambda functions runs whenever requests reach endpoints
     - Store data - DynamoDB
     - polish it with Route 53 and CloudFront for caching
+4. REST API with API Gateway & AWS Lambda
+  - What is the API Gateway?
+    - Creates a RESTful API with ease
+  - How it works
+    - Application (web app, mobile app, postman)
+    - Clients will send requests to REST API (database query etc.), node.js
+    - Endpoints can connect to client with URLs 
+    - Don't need to write code to API Endpoints & HTTP Methods
+    - Authentication - authorize access
+    - Action -> directly access some AWS services
+    - Run Lambda Code (and forward Request Data), hosts code
+  - API Gateway
+    - Resources, deploy on stage
+    - API Keys -> shared with others developers, creating their own apps (Google Maps API), register on Google, key to pass and Google can throttle you
+    - send keys to identify, and block users without API keys
+    - usage plan - only access 1000 times a minute
+    - not important if you API on your own
+    - Custom Domain Names, don't have the generic AWS domain
+    - Client Certificates to forward requests, to validate requests stems from API gateway, proves to final API endpoint on another API
+    - Settings -> generate log files to give the right provision
