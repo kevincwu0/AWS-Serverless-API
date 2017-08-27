@@ -75,3 +75,18 @@ Introduction:
   - Authentication with Cognito, protect against unauthenticated accoess
   - Content Delivery and Hosting with S3, CloudFront, and Route53 => Web apps in a serverless manner
   - Beyond the Basics (Outlook) 
+
+3. Core AWS Serverless Services
+  - Which AWS services we need to use to build a serverless solution
+  - Which services do we need?
+    - We can do more than host backend
+    - Web app, can host on AWS and scale dynamically, don't have to provision capacities
+      - Serve Static App (React.js App) -> S3 (Simple Storage Service), File storage server, no server-side code, no capacities
+      - REST API -> API Gateway - service that makes it easy to create paths and HTTP methods
+      - Logic -> Execute code on demand -> Lambda, custom API endpoint
+      - Data -> Store and Retrieve Data (DB) -> DynamoDB (NoSQL) - don't want to manage DB Servers, don't need to provision
+      - Auth -> Authenticate Users -> Cognito, easily create user pools to signups/signin and protect REST API
+      - DNS -> Translate URL -> Route 53, configure our own domain we actually load from S3 buckets
+      - Cache -> Improve Performance (e.g. caching) -> CloudFront, all over the world copied to have the quickest route possible
+    - For backend (API, Logic, Data, Auth)
+    
