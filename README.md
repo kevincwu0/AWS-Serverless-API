@@ -118,3 +118,60 @@ Introduction:
     - Custom Domain Names, don't have the generic AWS domain
     - Client Certificates to forward requests, to validate requests stems from API gateway, proves to final API endpoint on another API
     - Settings -> generate log files to give the right provision
+  - AWS Security Model and IAM (Identity and Access Management) 
+    - https://youtu.be/9CKsX6MOPDQ
+    - https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html
+    - By default, AWS doesn't give any permissions to any of your services. That means, that no service may interact with other services.
+  - Menu items of the API and how does it work?
+    - Resources -> Actions -> Create Resource -> Create method
+    - Resources manage resources and methods, new path in the final URL you want to use
+    - Resources is not live, we have to use actions -> Deploy API -> Select stage 
+    - Stages are like deployed snapshots
+    - Authorizers - add authentication to API
+      - How to authenticate users (AWS Cognito) 
+    - Models 
+      - Allow to define the shape of the data 
+      - Define JSON schema, how the JSON should be structured
+      - Validate incoming data, reject if not
+    - Documentation 
+      - Binary Support
+    - Dashboard (Governance), API Calls, Latency
+    - Resources -> Select Method -> How API Gateway works behind the scene
+  - API Gateway Request-Response Cycle
+    - Endpoint (Path and Type) - GET Requests
+    - Hit Endpoint we hit cycle
+      - Flow of data of our API
+      - Client (Test) - orange markers to get hints or show all hints => 
+      - Method Request - how incoming reqeust is handled by API gateway
+      - How requests look like, reject requests if it doesn't fit schema
+        - We can set to Authorization, we can block with error code
+        - Request Validator (query parameters, http request headers - after the question mark, request headers, request headers)
+        - API Key - lock API if they don't have keys
+      - Method request to fulfill the requirements
+    - Integration Request
+      - Mapping incoming data into the shape we want for the action (e.g. lambda, mock, http)
+      - Integration Request to trigger (lambda etc.)
+        - Transform incoming data, and pass it to the endpoint
+    - Integration Response
+        - When done sends it back, same above (extract data and pass to action)
+        - Allows us to configure response we're getting back
+    - Method Response
+        - Not a gatekeeper, defines our shape of response
+        - Status codes, headers to have, type of data
+    - Request is received, checked by the gate keeper, possibly rejected, transformed with integration request and pass it onto action, action does something with it, integration response - take the data action returned and transform and set it up for response -> method response - defines the boundary and shape of the response -> then sent back to client
+    - Four ways to create an API
+      - New API
+      - Clone from existing API 
+      - Import from Swagger - definition file, define API as a text file (automatically generate)
+      - API snapshots - Swagger file, JSON file
+      - Example API 
+    - Configure proxy resource - catch all and will be flexible, will catch all requests => serverless API is great, lambda you can express.js route in Lambda, full-stack serverless approach (hacky) 
+    - Enable API Gateway CORS
+      - What is CORS?
+        - Cross Origin Resource Sharing
+        - Security Model can't access resources on another resources
+        - Two different domains 
+        - Create an option to send right headers to client so that browser have no issues from our API
+        - CORS Header - Access-Control-Allow-Headers	
+        - Any domain can send these requests
+         
