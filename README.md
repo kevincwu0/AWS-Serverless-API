@@ -174,4 +174,13 @@ Introduction:
         - Create an option to send right headers to client so that browser have no issues from our API
         - CORS Header - Access-Control-Allow-Headers	
         - Any domain can send these requests
-         
+- What is AWS Lambda?
+  - AWS lambda is a service allowing you to host your code and run it on certain events
+  - How it works?
+    - Event Source (S3 - e.g. file gets uploaded) - transform it, people upload, compress, and analyze with ML
+      - CloudWatch (Scheduled - regular basis)
+      - API gateway (requests hits API gateway, HTTP request)
+    - Event Source -> Code (Node.js, Python, Java, C#) 
+    - Result -> interact with other AWS Services (DynamoDB) -> Return Response, callback is done and shutdown, pass data back to the event source. 
+    - AWS API Gateway + AWS Lambda
+    - Each endpoint triggers different Lambda Function
