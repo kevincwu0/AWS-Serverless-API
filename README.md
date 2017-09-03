@@ -203,4 +203,6 @@ Introduction:
     - Active Tracing - cost expensive
     - Encrypt environment keys
     - DLQ
-};
+ - Connecting Lambda Functions to API Gateway Endpoints
+  - Go to API Gateway and connect 
+  - Find Lambda and give permission 
