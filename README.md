@@ -184,3 +184,23 @@ Introduction:
     - Result -> interact with other AWS Services (DynamoDB) -> Return Response, callback is done and shutdown, pass data back to the event source. 
     - AWS API Gateway + AWS Lambda
     - Each endpoint triggers different Lambda Function
+- Creating a Lambda Function
+  - Lambda => Event Triggers 
+    - We don't set a trigger here, triggerleess function, logic in API Gateway not in Lambda
+    - Better to use IDE and upload code (zip file, or S3)
+    - could pass environmental variables 
+    - Function handler -> what actually gets called
+    - Upload files in a zip files (need file named index.js) - Lambda Docs
+    `exports.fn = (event, context, callback) => {`
+    `// TODO implement`
+    `callback(null, { message: 'Hi, I\'m Lambda!'});`
+    - Callback is a function itself takes two - (error arg, data we want to pass back) -> first object would be return, can control what to throw
+    - Role configurations - no permission granted in AWS initially,
+    - permission to write log files
+    - tags -> key,value pairs 
+    - How much memory is allocated, more expensive it is, free contingent each month
+    - VPC (Virtual Private Cloud) - 
+    - Active Tracing - cost expensive
+    - Encrypt environment keys
+    - DLQ
+};
