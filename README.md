@@ -206,3 +206,22 @@ Introduction:
  - Connecting Lambda Functions to API Gateway Endpoints
   - Go to API Gateway and connect 
   - Find AWS Lambda and give permission 
+- Connect our API Gateway and Lambda
+  - Want to test outside of API Gateway test
+  - We need to deploy API Gateway to call it outside
+  - Stages is our snapshot
+  - resources -> Deploy API
+  - Testing API -> codepen.io -> testing purposes on their servers
+    - disable auto-updating preview
+    
+    - `var xhr = new XMLHttpRequest();`
+    - `xhr.open('POST', 'https://a69nt0aobf.execute-api.us-west-2.amazonaws.com/dev/compare-yourself');`
+    - `xhr.onreadystatechange = function(event) {`
+    -  `console.log(event.target.response);`
+    - `}`
+    - `xhr.send();`
+  - CORS No Access-Control-Allow-Origin 
+  - 1. Add new header under Method Response `Access-Control-Allow-Origin`
+  - 2. Integration Response -> can now set value for header -> '*'     *
+  - Deployment history 
+  - CORS error won't come up in AWS console
