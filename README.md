@@ -205,4 +205,4 @@ Introduction:
     - DLQ
  - Connecting Lambda Functions to API Gateway Endpoints
   - Go to API Gateway and connect 
-  - Find Lambda and give permission 
+  - Find AWS Lambda and give permission 
