@@ -221,7 +221,20 @@ Introduction:
     - `}`
     - `xhr.send();`
   - CORS No Access-Control-Allow-Origin 
-  - 1. Add new header under Method Response `Access-Control-Allow-Origin`
-  - 2. Integration Response -> can now set value for header -> '*'     *
-  - Deployment history 
-  - CORS error won't come up in AWS console
+    - 1. Add new header under Method Response `Access-Control-Allow-Origin`
+    - 2. Integration Response -> can now set value for header -> '*'     *
+    - Deployment history 
+    - CORS error won't come up in AWS console
+  - Work with data and return meaningful response
+    - understanding what event is
+    - simply return event, we can change it in integration request (what reaches lambda)
+    - integration response (what we do with what is returned from lambda)
+    exports.fn = (event, context, callback) => {
+      // TODO implement
+      callback(null, event);
+    };
+  - Forwarding requests with "Proxy Integration"
+    - Integration Request -> POST -> Use Lambda Proxy Integration -> forward meta data to lambda function
+- CloudWatch to find Lambda logs
+  - Disadvantage of using proxy forwarding, JSON parse it, metadata - use for full control
+
